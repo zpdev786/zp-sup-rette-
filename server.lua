@@ -12,6 +12,13 @@ AddEventHandler('zejay:buyItem', function(itemName, quantity)
         end
     end
 
+            for _, v in pairs(Config.Liquoritem) do
+        if v.name == itemName then
+            itemConfig = v
+            break
+        end
+    end
+
     if not itemConfig then return end
 
     local totalPrice = itemConfig.price * quantity
